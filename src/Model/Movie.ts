@@ -1,4 +1,4 @@
-export default interface Movie {
+export interface Movie {
     id?: number;
     title: string;
     genres: Genre[];
@@ -9,8 +9,7 @@ export default interface Movie {
     poster_path: string;
 }
 
-
-interface Genre {
+export interface Genre {
     id?:number;
     name:string;
 }
