@@ -1,7 +1,7 @@
-import { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Movie, Genre } from "../Model/Movie";
 import { fetchByYear } from "../Services/MovieAPIService";
-
+import { Link} from 'react-router-dom';
 interface Props {
   year: number;
   genre: number;
@@ -21,7 +21,7 @@ function MovieResults({ year, genre, maxRuntime }: Props) {
       <h2>Watch List</h2>
       <ol>
         {movies.map((movie) => (
-          <li key={movie.id}>{movie.title}</li>
+          <li key={movie.id}><Link to={'/movies/${movie.id}'}>{movie.title}</Link></li>
         ))}
       </ol>
     </div>
