@@ -1,35 +1,25 @@
 import {Movie} from "../Model/Movie";
 import { useParams } from "react-router";
 import { useContext } from "react";
+import "./MovieDetails.css"
 
 interface Props{
-    movies: Movie[] 
+    movie: Movie 
 }
 
-interface RouteParams {
-    id: string;
-  }
-
-
-function MovieDetails ({movies}:Props) {
-    const { id } = useParams<RouteParams>();
-
-    function getMovieById(movieId: number): Movie|undefined {
-        return movies.find(movie => movie.id === movieId);
-      }
-    const movie = getMovieById(parseInt(id));
+function MovieDetails ({movie}:Props) {
     
     return (
         <div className="MovieDetails">
             <div>
-            <h2>{movie?.title}</h2>
-            <h3>{movie?.tagline}</h3>
-            <p>{movie?.runtime}</p>
+            <h2>{movie.title}</h2>
+            <h3>{movie.tagline}</h3>
+            <p>{movie.release_date}</p>
             </div>
 
             <div>
-                <p>{movie?.genres[0].name}</p>
-                <p>{movie?.overview}</p>
+               <img src={`https://image.tmdb.org/t/p/original/${movie.poster_path}`}></img>
+                <p>{movie.overview}</p>
             </div>
             <button>Add to Watchlist</button>
         </div>
