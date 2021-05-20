@@ -1,6 +1,7 @@
 import {Movie} from "../Model/Movie";
 import { useParams } from "react-router";
 import { useContext } from "react";
+import { MovieContext } from "../Context/MovieContext";
 import "./MovieDetails.css"
 
 interface Props{
@@ -8,6 +9,7 @@ interface Props{
 }
 
 function MovieDetails ({movie}:Props) {
+    const { favoriteMovies, addMovie } = useContext(MovieContext);
     
     return (
         <div className="MovieDetails">
@@ -21,7 +23,7 @@ function MovieDetails ({movie}:Props) {
                <img src={`https://image.tmdb.org/t/p/original/${movie.poster_path}`}></img>
                 <p>{movie.overview}</p>
             </div>
-            <button>Add to Watchlist</button>
+            <button onClick={() => addMovie(movie)} >Add to Watchlist</button>
         </div>
     )
 }
