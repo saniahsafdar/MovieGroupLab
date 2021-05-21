@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Movie, Genre } from "../Model/Movie";
-import { fetchByYear } from "../Services/MovieAPIService";
+import { fetchByAll, fetchByYear } from "../Services/MovieAPIService";
 import { Link } from "react-router-dom";
 import MovieDetails from "./MovieDetails";
 import { useContext } from "react";
@@ -17,12 +17,12 @@ function MovieResults({ year, genre, maxRuntime }: Props) {
   const [selectedMovie, setSelectedMovie] = useState<Movie | null>(null);
 
   useEffect(() => {
-    fetchByYear(year, genre, maxRuntime).then((data) => {
+    fetchByAll(year, genre, maxRuntime).then((data) => {
       setMovies(data);
     });
   }, [year, genre, maxRuntime]);
 
-  console.log(selectedMovie)
+
 
   return (
     <div className="WatchListDiv">
@@ -35,6 +35,7 @@ function MovieResults({ year, genre, maxRuntime }: Props) {
         ))}
         {selectedMovie && <MovieDetails movie={selectedMovie} />}
       </ol>
+      
     </div>
   );
 }

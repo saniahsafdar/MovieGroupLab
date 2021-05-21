@@ -21,14 +21,6 @@ export const MovieContext = createContext(defaultValue);
 
 export function MovieContextProvider({ children }: { children: ReactNode }) {
   const [ favoriteMovies, setFavoriteMovies ] = useState<Movie[]>([
-      {    id: 5,
-        title: "string",
-        genres: [],
-        overview:" string",
-        release_date: "string",
-        runtime:25,
-        tagline:"string",
-        poster_path: "string,"}
   ]);
 
   function addMovie(movie: Movie): void {
