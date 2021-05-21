@@ -21,7 +21,7 @@ function MovieForm() {
   return (
     <div>
     <form className="MovieForm" onSubmit={handleSubmit}>
-      <h1>What to Watch</h1>
+      <h2>What to Watch</h2>
       <div>
         <label>
           Year

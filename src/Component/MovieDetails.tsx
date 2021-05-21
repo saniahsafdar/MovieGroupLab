@@ -10,13 +10,14 @@ interface Props{
 
 function MovieDetails ({movie}:Props) {
     const { favoriteMovies, addMovie } = useContext(MovieContext);
+
+    const date = movie.release_date.substring(0,4);
     
     return (
         <div className="MovieDetails">
             <div>
             <h2>{movie.title}</h2>
-            <h3>{movie.tagline}</h3>
-            <p>{movie.release_date}</p>
+            <p>{date}</p>
             </div>
 
             <div>
