@@ -6,13 +6,15 @@ interface MovieContextValue {
   favoriteMovies: Movie[];
   addMovie: (movie: Movie) => void;
   removeMovie: (movie: Movie) => void;
+  isOnList: (movie: Movie) => boolean
 }
 
 // necessary to provide blank/default values
 const defaultValue: MovieContextValue = {
   favoriteMovies: [],
   addMovie: () => {},
-  removeMovie: () => {}
+  removeMovie: () => {},
+  isOnList: () => {return false}
 }
 
 // Here is the actual context object.
@@ -35,8 +37,12 @@ export function MovieContextProvider({ children }: { children: ReactNode }) {
       ])
   }
 
+  function isOnList(movie: Movie) {
+    return favoriteMovies.includes(movie)
+  }
+
   return (
-    <MovieContext.Provider value={{favoriteMovies, addMovie, removeMovie}} >
+    <MovieContext.Provider value={{favoriteMovies, addMovie, removeMovie, isOnList}} >
       {children}
     </MovieContext.Provider>
   );

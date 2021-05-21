@@ -10,16 +10,13 @@ interface Props{
 
 function MovieDetails ({movie}:Props) {
     const { favoriteMovies, addMovie , removeMovie } = useContext(MovieContext);
-    const [onWatchList, setOnWatchList] = useState(false);
+    
 
     const date = movie.release_date.substring(0,4);
     
     // setOnWatchList(favoriteMovies.includes(movie)); 
     
-    function OnClick () {
-        addMovie(movie);
-        setOnWatchList(true)
-    }
+
 
 
     return (
@@ -33,8 +30,7 @@ function MovieDetails ({movie}:Props) {
                <img src={`https://image.tmdb.org/t/p/original/${movie.poster_path}`}></img>
                 <p>{movie.overview}</p>
             </div>
-            {onWatchList===false &&<button onClick={OnClick} > Add to Watchlist</button>}
-            <button onClick={() => removeMovie(movie)} >Remove from Watchlist</button>
+
         </div>
     )
 }

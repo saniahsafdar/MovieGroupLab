@@ -35,7 +35,7 @@ function MovieForm() {
 
         <div>
           <p>Select a genre!</p>
-        <input type="radio" value="18" name="genre" checked onChange={e => setGenre(Number(e.target.value))} /> Drama
+        <input type="radio" value="18" name="genre" onChange={e => setGenre(Number(e.target.value))} /> Drama
         <input type="radio" value="28" name="genre" onChange={e => setGenre(Number(e.target.value))} /> Action
         <input type="radio" value="35" name="genre" onChange={e => setGenre(Number(e.target.value))}/> Comedy
         <input type="radio" value="16" name="genre" onChange={e => setGenre(Number(e.target.value))}/> Animation

@@ -12,8 +12,8 @@ function DisplayWatchList() {
       <p>Your Watchlist!</p>
       <ul>
         {favoriteMovies.map((movie) => (
-          <li key={movie.id} onClick={() => setSelectedMovie(movie)}>
-            {movie.title}
+          <li key={movie.id} ><span onClick={() => setSelectedMovie(movie)}>{movie.title}</span>
+            
             <button className="RemoveButton" onClick={() => removeMovie(movie)}>Remove from List</button>
           </li>
         ))}
