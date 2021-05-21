@@ -5,7 +5,6 @@ export interface Movie {
     overview: string;
     release_date: string;
     runtime:number;
-    tagline:string;
     poster_path: string;
 }
 
