@@ -3,12 +3,14 @@ import { useParams } from "react-router";
 import { useContext, useState } from "react";
 import { MovieContext } from "../Context/MovieContext";
 import "./MovieDetails.css"
+import CloseIcon from '@material-ui/icons/Close';
 
 interface Props{
-    movie: Movie 
+    movie: Movie;
+    onClose: () => void; 
 }
 
-function MovieDetails ({movie}:Props) {
+function MovieDetails ({movie, onClose}:Props) {
     const { favoriteMovies, addMovie , removeMovie } = useContext(MovieContext);
     
 
@@ -21,14 +23,12 @@ function MovieDetails ({movie}:Props) {
 
     return (
         <div className="MovieDetails">
-            <div>
-            <h2>{movie.title}</h2>
-            <p>{date}</p>
-            </div>
-
-            <div>
-               <img src={`https://image.tmdb.org/t/p/original/${movie.poster_path}`}></img>
-                <p>{movie.overview}</p>
+            <div className="modalContent">
+                <div className="close"><CloseIcon color="primary" onClick={onClose}/></div>
+                <h2 className="detailsTitle">{movie.title}</h2>
+                <p>{date}</p>
+                <p className="overview">{movie.overview}</p>
+                <img src={`https://image.tmdb.org/t/p/original/${movie.poster_path}`}></img>
             </div>
 
         </div>

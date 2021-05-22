@@ -1,0 +1,32 @@
+ul {
+    padding: 0;
+    margin-top: 0;
+    list-style: none;
+    max-width: fit-content;
+  }
+  
+  li {
+    display: grid;
+    grid-template-columns: 300px 100px;
+    margin-bottom: 6px;
+    padding-top: 12px;
+    border-top: 1px solid rgba(255, 248, 219, .2);
+  }
+  
+  .watchListHeader {
+    display: grid;
+    grid-template-columns: 240px 160px;
+    align-items: baseline;
+  
+  }
+  
+  .watchListHeader p {
+    font-size: .8em;
+    font-weight: bold;
+  }
+  
+  
+  .removeIcon {
+    margin: 0;
+    text-align: center;
+  }

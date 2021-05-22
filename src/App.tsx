@@ -4,16 +4,26 @@ import MovieForm from "./Component/MovieForm";
 // import MovieResults from "./Component/MovieResults";
 import {MovieContextProvider} from "./Context/MovieContext";
 import DisplayWatchList from "./Component/DisplayWatchList";
-import { BrowserRouter as Router, Switch, Route, Redirect, Link, NavLink } from 'react-router-dom';
+import { BrowserRouter as Router, Switch, Route, Redirect, NavLink } from 'react-router-dom';
+import { createMuiTheme, ThemeProvider } from '@material-ui/core'
+
+const theme = createMuiTheme ({
+ palette:{
+   primary: {
+     main: "#fff8dc"
+   },   
+ }
+})
 
 function App() {
   return (
     <div className="App">
+      <ThemeProvider theme={theme}>
       <Router>
         <h1>Movie Explorer</h1>
         <nav>
-          <Link to="/search">Find Movies</Link>
-          <Link to="/watchlist">View my watchlist</Link>
+          <NavLink to="/search" className="nav" activeClassName="selected">Find Movies</NavLink>
+          <NavLink to="/watchlist" className="nav" activeClassName="selected">View my watchlist</NavLink>
         </nav>
       
         <MovieContextProvider>
@@ -34,6 +44,7 @@ function App() {
           </Switch>
         </MovieContextProvider>
       </Router>
+      </ThemeProvider>
     </div>
   );
 }
