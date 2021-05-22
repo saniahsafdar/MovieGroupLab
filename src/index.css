@@ -1,13 +1,85 @@
 body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  background-color: black;
+  color:cornsilk;
+  padding:2% 8%;
+  font-family: 'Montserrat', sans-serif;
+  border: 3px solid goldenrod;
+  min-height: 93vh;
+  
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+h1 {
+  font-family: "Limelight", sans-serif;
+  font-size: 3em;
+  margin-bottom: 0;
+  text-shadow: 1.5px 1.5px goldenrod;
 }
+
+a {
+  color:darkgoldenrod;
+}
+
+.radios {
+  margin-top: 8px;
+  margin-bottom: 16px;
+  display: flex;
+  flex-direction: column;
+}
+
+input {
+  background-color: rgb(255, 248, 240);
+  border-radius: 4px;
+  border: none;
+}
+
+button[type="submit"] {
+  background-color: goldenrod;
+  font-size: 1em;
+  padding: .75em;
+  border-radius: 4px;
+  border: none;
+  width: 150px;
+  
+}
+
+.nav{
+  width: 160px;
+  padding: .25em;
+  margin: 4px;
+  border: none;
+}
+
+/* ul {
+  padding: 0;
+  margin-top: 0;
+  list-style: none;
+  max-width: fit-content;
+}
+
+li {
+  display: grid;
+  grid-template-columns: 300px 100px;
+  margin-bottom: 6px;
+  padding-top: 12px;
+  border-top: 1px solid rgba(255, 248, 219, .2);
+}
+
+.resultsHeader {
+  display: grid;
+  grid-template-columns: 240px 160px;
+  align-items: baseline;
+
+}
+
+.resultsHeader p {
+  font-size: .9em;
+  font-weight: bold;
+}
+
+
+.addIcon {
+  margin: 0;
+  text-align: center;
+} */
+
+

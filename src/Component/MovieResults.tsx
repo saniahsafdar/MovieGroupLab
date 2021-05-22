@@ -1,10 +1,11 @@
-import React, { useEffect, useState } from "react";
-import { Movie, Genre } from "../Model/Movie";
+import { useEffect, useState } from "react";
+import { Movie } from "../Model/Movie";
 import { fetchByAll } from "../Services/MovieAPIService";
-import { Link } from "react-router-dom";
 import MovieDetails from "./MovieDetails";
 import { useContext } from "react";
 import { MovieContext } from "../Context/MovieContext";
+import StarsIcon from '@material-ui/icons/Stars';
+import './MovieResults.css';
 
 interface Props {
   year: number;
@@ -37,17 +38,28 @@ function MovieResults({ year, genre, maxRuntime }: Props) {
 
   return (
     <div className="WatchListDiv">
-      <h2>Search Results</h2>
-      <ol>
-        {movies.map((movie) => (
-          <li key={movie.id}>
-            <span onClick={() => setSelectedMovie(movie)}> {movie.title} </span>
-            {!onWatchList &&
-            <button onClick={() => {OnClickAdd(movie);}}>{" "} Add to Watchlist </button>}</li>))}
-        
-        {selectedMovie && <MovieDetails movie={selectedMovie} />}
+      {movies.length > 0 && <>
+        <h2>Search Results</h2>
+        <div className="resultsHeader">
+          <p className="headerForDetails">Click title for details</p>
+          <p className="headerForAdd">Add to my watchlist</p>
+        </div> 
+      </>}
+          <ul className="resultsList">
+            {movies.map((movie) => (
+              <li key={movie.id}>
+                <span onClick={() => setSelectedMovie(movie)}> {movie.title} </span>
+                {/* {!onWatchList &&
+                <button onClick={() => {OnClickAdd(movie);}}>{" "} Add to Watchlist </button>}</li>))}
+                {!onWatchList && */}
+                <p className="addIcon"><StarsIcon color="primary" onClick={() => {OnClickAdd(movie);}}/></p>
+                
+              </li>))}
+
+            
+            {selectedMovie && <MovieDetails movie={selectedMovie} onClose={() => setSelectedMovie(null)}/>}
       
-      </ol>
+      </ul>
     </div>
   );
 }
