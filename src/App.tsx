@@ -6,15 +6,12 @@ import {MovieContextProvider} from "./Context/MovieContext";
 import DisplayWatchList from "./Component/DisplayWatchList";
 import { BrowserRouter as Router, Switch, Route, Redirect, NavLink } from 'react-router-dom';
 import { createMuiTheme, ThemeProvider } from '@material-ui/core'
-import { amber } from "@material-ui/core/colors";
 
 const theme = createMuiTheme ({
  palette:{
    primary: {
      main: "#fff8dc"
-   },
-     secondary: amber
-   
+   },   
  }
 })
 
@@ -25,8 +22,8 @@ function App() {
       <Router>
         <h1>Movie Explorer</h1>
         <nav>
-          <NavLink to="/search"><button className="nav">Find Movies</button></NavLink>
-          <NavLink to="/watchlist"><button className="nav">View my watchlist</button></NavLink>
+          <NavLink to="/search" className="nav" activeClassName="selected">Find Movies</NavLink>
+          <NavLink to="/watchlist" className="nav" activeClassName="selected">View my watchlist</NavLink>
         </nav>
       
         <MovieContextProvider>

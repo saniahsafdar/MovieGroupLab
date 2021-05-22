@@ -7,21 +7,27 @@ img {
 }
 
 .MovieDetails {
-    position: fixed;
-    width: 100%;
-    height: 100%;
-    top: 0;
-    left: 0;
-    background-color: rgba(184, 134, 11, .95);
+  
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(184, 134, 11, .95);
 
 }
 
-.modalContainer {
+
+.modalContent {
+    
     width: 70%;
     margin: 32px auto;
     background-color: black;
     padding: 32px;
     box-shadow: 1px 1px 32px 1px black;
+    position:relative;
+    overflow:auto;
+    height:auto;
 }
 
 .overview {
@@ -33,4 +39,8 @@ img {
 .close {
     display: flex;
     justify-content: flex-end;
+}
+
+.detailsTitle {
+   margin-top:-10px;
 }

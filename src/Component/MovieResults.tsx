@@ -8,9 +8,9 @@ import StarsIcon from '@material-ui/icons/Stars';
 import './MovieResults.css';
 
 interface Props {
-  year: number;
-  genre: number;
-  maxRuntime: number;
+  year: string;
+  genre: string;
+  maxRuntime: string;
 }
 
 function MovieResults({ year, genre, maxRuntime }: Props) {

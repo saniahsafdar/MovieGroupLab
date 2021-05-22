@@ -23,9 +23,9 @@ function MovieDetails ({movie, onClose}:Props) {
 
     return (
         <div className="MovieDetails">
-            <div className="modalContainer">
+            <div className="modalContent">
                 <div className="close"><CloseIcon color="primary" onClick={onClose}/></div>
-                <h2>{movie.title}</h2>
+                <h2 className="detailsTitle">{movie.title}</h2>
                 <p>{date}</p>
                 <p className="overview">{movie.overview}</p>
                 <img src={`https://image.tmdb.org/t/p/original/${movie.poster_path}`}></img>
