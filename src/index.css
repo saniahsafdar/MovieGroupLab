@@ -62,3 +62,13 @@ button[type="submit"]:active {
   background-color: rgba(218, 165, 32, .2);
   color: darkgoldenrod;
 }
+
+nav {
+  margin-bottom: 40px;
+
+}
+
+form {
+  margin: 0 65px;
+ 
+}

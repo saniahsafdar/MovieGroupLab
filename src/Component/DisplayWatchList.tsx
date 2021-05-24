@@ -22,7 +22,7 @@ function DisplayWatchList() {
           <li key={movie.id} ><span onClick={() => setSelectedMovie(movie)}>{movie.title}</span>
             
             {/* <button className="RemoveButton" onClick={() => removeMovie(movie)}>Remove from List</button> */}
-            <p className="removeIcon"><DeleteIcon color="primary" className="RemoveButton" onClick={() => removeMovie(movie)} /></p>
+            <button onClick={() => removeMovie(movie)} className="removeButton"><DeleteIcon color="primary" className="RemoveIcon" /></button>
           </li>
         ))}
       </ul>

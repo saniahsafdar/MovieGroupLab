@@ -37,8 +37,8 @@ export function MovieContextProvider({ children }: { children: ReactNode }) {
       ])
   }
 
-  function isOnList(movie: Movie) {
-    return favoriteMovies.includes(movie)
+  function isOnList(movie: Movie):boolean {
+    return favoriteMovies.some(movie => movie.id === movie.id)
   }
 
   return (

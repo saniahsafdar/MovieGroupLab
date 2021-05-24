@@ -49,10 +49,8 @@ function MovieResults({ year, genre, maxRuntime }: Props) {
             {movies.map((movie) => (
               <li key={movie.id}>
                 <span onClick={() => setSelectedMovie(movie)}> {movie.title} </span>
-                {/* {!onWatchList &&
-                <button onClick={() => {OnClickAdd(movie);}}>{" "} Add to Watchlist </button>}</li>))}
-                {!onWatchList && */}
-                <p className="addIcon"><StarsIcon color="primary" onClick={() => {OnClickAdd(movie);}}/></p>
+        
+                <button  disabled={isOnList(movie)} onClick={() => {OnClickAdd(movie);}} className="addButton"><StarsIcon color="primary"/></button>
                 
               </li>))}
 
